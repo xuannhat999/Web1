@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Website Cơ Bản</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Xin chào!</h1>
+  <p id="api-response">Đang tải dữ liệu từ backend...</p>
+
+  <script>
+    fetch('/api/hello')
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('api-response').textContent = data.message;
+      });
+  </script>
+</body>
+</html>
